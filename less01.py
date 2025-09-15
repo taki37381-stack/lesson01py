@@ -16,7 +16,7 @@ def get_tickets(requested, available):
         return requested
 
 def main():
-    total_tickets = 20
+    total_tickets = 10
     tickets_sold = 0
     buyers = 0
 
@@ -24,14 +24,14 @@ def main():
         available = total_tickets - tickets_sold
         print(f"\nTickets remaining: {available}")
         try:
-            requested = int(input("How many tickets would you like to buy? (max 4): "))
+            requested = int(input("How many tickets would you like to buy? (up to 4): "))
         except ValueError:
             print("Invalid input. Please enter a number.")
             continue
 
         sold = get_tickets(requested, available)
         if sold > 0:
-            tickets_sold += sold
+            tickets_sold_count += sold
             buyers += 1
             print(f"{sold} tickets sold. {total_tickets - tickets_sold} tickets remaining.")
 
