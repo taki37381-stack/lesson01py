@@ -17,11 +17,11 @@ def get_tickets(requested, available):
 
 def main():
     total_tickets = 10
-    tickets_sold = 0
+    tickets_sold_count = 0  # renamed and initialized here
     buyers = 0
 
-    while tickets_sold < total_tickets:
-        available = total_tickets - tickets_sold
+    while tickets_sold_count < total_tickets:
+        available = total_tickets - tickets_sold_count
         print(f"\nTickets remaining: {available}")
         try:
             requested = int(input("How many tickets would you like to buy? (up to 4): "))
@@ -33,7 +33,7 @@ def main():
         if sold > 0:
             tickets_sold_count += sold
             buyers += 1
-            print(f"{sold} tickets sold. {total_tickets - tickets_sold} tickets remaining.")
+            print(f"{sold} tickets sold. {total_tickets - tickets_sold_count} tickets remaining.")
 
     print("\nAll tickets sold!")
     print(f"Total buyers: {buyers}")
